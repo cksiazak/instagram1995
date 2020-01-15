@@ -1,23 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const SectionWrapper = styled.section`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  height: 100%;
-`;
-
-const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  align-items: center;
-  width: 40%;
-  background: #6c6c6c;
-  padding: 50px;
-`;
+import { SectionWrapper } from '../styles/GlobalStyles';
 
 const HomeHeading = styled.div`
   display: flex;
@@ -54,25 +38,25 @@ const AuthButton = styled(Link)`
 
   &:active {
     border: inset 2px darkgray;
+    background: blue;
+    color: white;
   }
 `;
 
 const Home = () => {
   return (
     <SectionWrapper>
-      <InnerWrapper>
-        <HomeHeading>
-          <WelcomeMsg>Welcome to Instagram1995!</WelcomeMsg>
-          <UnderHeading>
-            I thought it'd be fun to rebuild instagram in the style of 1995
-            windows applications.
-          </UnderHeading>
-        </HomeHeading>
-        <ButtonWrapper>
-          <AuthButton to='/register'>Register</AuthButton>
-          <AuthButton to='/login'>Login</AuthButton>
-        </ButtonWrapper>
-      </InnerWrapper>
+      <HomeHeading>
+        <WelcomeMsg>Welcome to Instagram1995!</WelcomeMsg>
+        <UnderHeading>
+          I thought it'd be fun to rebuild instagram in the style of 1995
+          windows applications.
+        </UnderHeading>
+      </HomeHeading>
+      <ButtonWrapper>
+        <AuthButton to='/register'>Register</AuthButton>
+        <AuthButton to='/login'>Login</AuthButton>
+      </ButtonWrapper>
     </SectionWrapper>
   );
 };

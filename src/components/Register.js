@@ -11,7 +11,7 @@ import {
   AuthLink
 } from '../styles/AuthStyles';
 
-const Login = () => {
+const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
     password: ''
@@ -30,7 +30,7 @@ const Login = () => {
   };
   return (
     <SectionWrapper>
-      <PageHeading>Login</PageHeading>
+      <PageHeading>Register</PageHeading>
       <Form onSubmit={submitHandler}>
         <InputLabel htmlFor='username'>Username</InputLabel>
         <InputField
@@ -49,10 +49,10 @@ const Login = () => {
         <SubmitButton type='submit'>Submit</SubmitButton>
       </Form>
       <UnderForm>
-        Did you need to Register? <AuthLink to='/register'>Click Here</AuthLink>
+        Did you need to Login?<AuthLink to='/login'>Click Here</AuthLink>
       </UnderForm>
     </SectionWrapper>
   );
 };
 
-export default Login;
+export default Signup;
