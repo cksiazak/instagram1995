@@ -18,7 +18,7 @@ const Home = () => {
   };
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className='userform'>
         <input type='text' onChange={changeHandler} value={form} />
         <button type='submit'>Submit</button>
       </form>
