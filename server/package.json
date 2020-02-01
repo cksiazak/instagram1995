@@ -1,0 +1,11 @@
+{
+  "name": "instagram1995-backend",
+  "version": "1.0.0",
+  "description": "Built using Hapi.js and sequelize",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^19.0.5",
+    "sequelize": "^5.21.3"
+  }
+}
