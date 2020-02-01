@@ -1,11 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 import { rootReducer } from './reducers';
 
-export default () => {
+export default (initialState, { isServer, req, debug, storeKey }) => {
   // Redux dev tools set up
   let composeEnhancers = compose;
   if (
@@ -24,19 +22,26 @@ export default () => {
   const configureStore = reducer =>
     createStore(reducer, composeEnhancers(...enhancers));
 
-  // set store config
-  const persistConfig = {
-    key: 'nextjs',
-    storage
-  };
+  if (isServer) {
+    return configureStore(rootReducer);
+  } else {
+    const { persistStore, persistReducer } = require('redux-persist');
+    const storage = require('redux-persist/lib/storage').default;
 
-  // we'll pass in the configurations and the root reducer
-  const persistedReducer = persistReducer(persistConfig, rootReducer);
-  // pass in persistedReducer into our store configurator
-  const store = configureStore(persistedReducer);
+    // set store config
+    const persistConfig = {
+      key: 'nextjs',
+      storage
+    };
 
-  // this is hacky, but it works
-  store.__persistor = persistStore(store);
+    // we'll pass in the configurations and the root reducer
+    const persistedReducer = persistReducer(persistConfig, rootReducer);
+    // pass in persistedReducer into our store configurator
+    const store = configureStore(persistedReducer);
 
-  return store;
+    // this is hacky, but it works
+    store.__persistor = persistStore(store);
+
+    return store;
+  }
 };
