@@ -24,14 +24,18 @@ export default () => {
   const configureStore = reducer =>
     createStore(reducer, composeEnhancers(...enhancers));
 
+  // set store config
   const persistConfig = {
     key: 'nextjs',
     storage
   };
 
+  // we'll pass in the configurations and the root reducer
   const persistedReducer = persistReducer(persistConfig, rootReducer);
+  // pass in persistedReducer into our store configurator
   const store = configureStore(persistedReducer);
 
+  // this is hacky, but it works
   store.__persistor = persistStore(store);
 
   return store;
