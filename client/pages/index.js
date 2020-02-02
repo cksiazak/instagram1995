@@ -24,7 +24,6 @@ const ButtonWrapper = styled.div`
     font-size: 3rem;
     margin: 15px;
     border: 3px outset;
-    user-select: none;
 
     &:hover {
       cursor: pointer;

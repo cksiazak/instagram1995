@@ -32,7 +32,7 @@ export const InnerWindow = styled.div`
   flex-direction: column;
   align-items: center;
   background: #c0c0c0;
-  border: 3px outset;
+  border: 3px outset lightgray;
 `;
 
 export const WindowBar = styled.div`
