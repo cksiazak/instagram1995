@@ -23,7 +23,7 @@ export default (initialState, { isServer, req, debug, storeKey }) => {
     createStore(reducer, composeEnhancers(...enhancers));
 
   if (isServer) {
-    return configureStore(rootReducer);
+    return configureStore(rootReducer, initialState);
   } else {
     const { persistStore, persistReducer } = require('redux-persist');
     const storage = require('redux-persist/lib/storage').default;
@@ -37,7 +37,7 @@ export default (initialState, { isServer, req, debug, storeKey }) => {
     // we'll pass in the configurations and the root reducer
     const persistedReducer = persistReducer(persistConfig, rootReducer);
     // pass in persistedReducer into our store configurator
-    const store = configureStore(persistedReducer);
+    const store = configureStore(persistedReducer, initialState);
 
     // this is hacky, but it works
     store.__persistor = persistStore(store);

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { userReducer } from './userReducer';
+import { placeholder } from './placeholder';
 
 export const rootReducer = combineReducers({
-  userReducer
+  placeholder
 });
