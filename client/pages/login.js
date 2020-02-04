@@ -1,23 +1,14 @@
 import React from 'react';
-import AuthForm from '../components/AuthForm';
-import styled from 'styled-components';
+import Link from 'next/link';
 
-const Section = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-`;
-
-const InnerContianer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-`;
+// import components
+import AuthForm from '../components/Authentication/AuthForm';
+import {
+  Section,
+  InnerContainer,
+  AppHeading,
+  PageHeader
+} from '../components/Authentication/PageInformation';
 
 const Login = () => {
   const submitHandler = (e, form) => {
@@ -27,10 +18,17 @@ const Login = () => {
 
   return (
     <Section>
-      <InnerContianer>
-        <h1>Login</h1>
+      <InnerContainer>
+        <AppHeading>Nextagram95</AppHeading>
+        <PageHeader>Login</PageHeader>
         <AuthForm submitHandler={submitHandler} AuthPage='Login' />
-      </InnerContianer>
+        <p>
+          Need an accoumt?{' '}
+          <Link href='/signup'>
+            <a>Sign Up</a>
+          </Link>
+        </p>
+      </InnerContainer>
     </Section>
   );
 };
