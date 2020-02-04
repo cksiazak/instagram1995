@@ -34,9 +34,9 @@ class MyApp extends App {
           <GlobalStyle />
           <WindowWrap>
             <InnerWindow>
-              <Modal />
+              {/* <Modal /> */}
               <WindowBar>
-                <p>Instagram95.exe</p>
+                <p>Nextagram95.exe</p>
                 <button>
                   <span>X</span>
                 </button>

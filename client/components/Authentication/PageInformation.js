@@ -7,7 +7,7 @@ const SectionContainer = styled.section`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 
 export const Section = props => (
@@ -27,23 +27,22 @@ export const InnerContainer = props => (
 );
 
 const AppHeader = styled.h1`
-  font-size: 8rem;
+  font-size: 6rem;
   padding-bottom: 25px;
   border-bottom: 3px dashed black;
-  margin-bottom: 50px;
 `;
 
 export const AppHeading = props => <AppHeader>{props.children}</AppHeader>;
 
 const AuthHeading = styled.h2`
-  font-size: 5rem;
-  padding: 30px 0px 15px;
+  font-size: 4rem;
+  padding: 50px 0px 15px;
 `;
 
 export const PageHeader = props => <AuthHeading>{props.children}</AuthHeading>;
 
 const AskText = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   text-align: right;
   width: 100%;
   padding-top: 15px;

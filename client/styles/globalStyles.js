@@ -25,7 +25,7 @@ export const WindowWrap = styled.div`
 `;
 
 export const InnerWindow = styled.div`
-  width: 90%;
+  width: 75%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,8 @@ export const InnerWindow = styled.div`
   background: #c0c0c0;
   border: 3px outset lightgray;
   padding-bottom: 100px;
+  margin-top: 50px;
+  max-width: 1200px;
 `;
 
 export const WindowBar = styled.div`

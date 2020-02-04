@@ -5,27 +5,27 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 600px;
 `;
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   padding-top: 15px;
 `;
 const InputLabel = styled.label`
   padding-bottom: 10px;
 `;
 const InputField = styled.input`
-  font-size: 2.5rem;
-  padding: 5px 0px;
+  font-size: 2.25rem;
+  padding: 5px 5px;
   margin-bottom: 10px;
 `;
 const SubmitButton = styled.button`
   border: outset lightgray;
   background: #c0c0c0;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+  margin-top: 5px;
   padding: 5px;
 
   &:active {
