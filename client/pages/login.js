@@ -7,7 +7,8 @@ import {
   Section,
   InnerContainer,
   AppHeading,
-  PageHeader
+  PageHeader,
+  UserAsk
 } from '../components/Authentication/PageInformation';
 
 const Login = () => {
@@ -21,13 +22,13 @@ const Login = () => {
       <InnerContainer>
         <AppHeading>Nextagram95</AppHeading>
         <PageHeader>Login</PageHeader>
-        <AuthForm submitHandler={submitHandler} AuthPage='Login' />
-        <p>
-          Need an accoumt?{' '}
+        <AuthForm submitHandler={submitHandler} />
+        <UserAsk>
+          Need an account?{' '}
           <Link href='/signup'>
-            <a>Sign Up</a>
+            <a>Register</a>
           </Link>
-        </p>
+        </UserAsk>
       </InnerContainer>
     </Section>
   );

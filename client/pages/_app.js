@@ -5,6 +5,8 @@ import withRedux from 'next-redux-wrapper';
 import initStore from '../store/initStore';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import Modal from '../components/CloseWindowModal';
+
 import {
   GlobalStyle,
   WindowWrap,
@@ -13,6 +15,10 @@ import {
 } from '../styles/globalStyles';
 
 class MyApp extends App {
+  state = {
+    errorModal: false
+  };
+
   static async getInitialProps({ Component, ctx }) {
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
@@ -28,8 +34,12 @@ class MyApp extends App {
           <GlobalStyle />
           <WindowWrap>
             <InnerWindow>
+              <Modal />
               <WindowBar>
                 <p>Instagram95.exe</p>
+                <button>
+                  <span>X</span>
+                </button>
               </WindowBar>
               <Component {...pageProps} />
             </InnerWindow>

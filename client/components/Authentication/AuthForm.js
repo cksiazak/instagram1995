@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 100%;
   max-width: 600px;
 `;
 const InputContainer = styled.div`
@@ -33,7 +33,7 @@ const SubmitButton = styled.button`
   }
 `;
 
-const AuthForm = ({ submitHandler, AuthPage }) => {
+const AuthForm = ({ submitHandler }) => {
   const [form, setForm] = useState({
     username: '',
     password: ''
@@ -54,7 +54,7 @@ const AuthForm = ({ submitHandler, AuthPage }) => {
         <InputLabel htmlFor='password'>Password:</InputLabel>
         <InputField type='password' name='password' onChange={changeHandler} />
       </InputContainer>
-      <SubmitButton type='submit'>{AuthPage}</SubmitButton>
+      <SubmitButton type='submit'>Submit</SubmitButton>
     </Form>
   );
 };

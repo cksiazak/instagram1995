@@ -5,8 +5,9 @@ const SectionContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
-  padding-top: 150px;
+  padding-top: 100px;
 `;
 
 export const Section = props => (
@@ -18,7 +19,7 @@ const InnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 35%;
 `;
 
 export const InnerContainer = props => (
@@ -36,9 +37,16 @@ export const AppHeading = props => <AppHeader>{props.children}</AppHeader>;
 
 const AuthHeading = styled.h2`
   font-size: 5rem;
-  padding: 10px 0px;
+  padding: 30px 0px 15px;
 `;
 
-export const PageHeader = props => (
-<AuthHeading>{props.children}</AuthHeading>
-)
+export const PageHeader = props => <AuthHeading>{props.children}</AuthHeading>;
+
+const AskText = styled.p`
+  font-size: 2.5rem;
+  text-align: right;
+  width: 100%;
+  padding-top: 15px;
+`;
+
+export const UserAsk = props => <AskText>{props.children}</AskText>;
